@@ -1,0 +1,146 @@
+﻿<link href="~/css/colors.css" rel="stylesheet" />
+<link href="~/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="style.css">
+<link href="~/css/versions.css" rel="stylesheet" />
+<link href="~/css/responsive.css" rel="stylesheet" />
+<link href="~/css/custom.css" rel="stylesheet" />
+<link href="~/css/style.css" rel="stylesheet" />
+<body class="barber_version">
+
+
+
+    <div id="wrapper">
+
+        <!-- Sidebar-wrapper -->
+        <div id="sidebar-wrapper">
+            <div class="side-top">
+                <div class="logo-sidebar">
+                    Pc
+                </div>
+                <ul class="sidebar-nav">
+                    <li>@Html.ActionLink("Clientes", "Index", "Clientes")</li>
+                    <li>@Html.ActionLink("Computadoras", "Index", "Computadoras")</li>
+                    <li>@Html.ActionLink("Componentes", "Index", "Componentes")</li>
+                    <li>@Html.ActionLink("Facturas", "Index", "Facturas")</li>
+                </ul>
+            </div>
+        </div><!-- End Sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+
+
+
+
+            @model Proyecto_Final.Models.Componentes
+
+            @{
+                ViewBag.Title = "Details";
+            }
+
+            <h2>Detalles</h2>
+
+            <div>
+                <h4>Componentes</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ComputadoraID)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ComputadoraID)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Microprocesador)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Microprocesador)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Ram)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Ram)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.PlacaMadre)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.PlacaMadre)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Almacenamiento)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Almacenamiento)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TarjetaVideo)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TarjetaVideo)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Gabinete)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Gabinete)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.FuenteDePoder)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.FuenteDePoder)
+                    </dd>
+
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Editar", "Edit", new { id = Model.ComponentesID }) |
+                @Html.ActionLink("Regresar a la lista", "Index")
+            </p>
+        </div>
+    </div><!-- end wrapper -->
+
+    <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+    <!-- ALL JS FILES -->
+    <script src="~/js/all.js"></script>
+    <script src="~/js/responsive-tabs.js"></script>
+    <script src="~/js/custom.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+        (function ($) {
+            "use strict";
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+            smoothScroll.init({
+                selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
+                selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
+                speed: 500, // Integer. How fast to complete the scroll in milliseconds
+                easing: 'easeInOutCubic', // Easing pattern to use
+                offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
+                callback: function (anchor, toggle) { } // Function to run after scrolling
+            });
+        })(jQuery);
+    </script>
+    </div>
+</body>

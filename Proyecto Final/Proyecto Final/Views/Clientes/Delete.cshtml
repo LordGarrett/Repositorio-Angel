@@ -1,0 +1,127 @@
+﻿
+<link href="~/css/colors.css" rel="stylesheet" />
+<link href="~/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="style.css">
+<link href="~/css/versions.css" rel="stylesheet" />
+<link href="~/css/responsive.css" rel="stylesheet" />
+<link href="~/css/custom.css" rel="stylesheet" />
+<link href="~/css/style.css" rel="stylesheet" />
+<body class="barber_version">
+
+    <div id="wrapper">
+
+        <!-- Sidebar-wrapper -->
+        <div id="sidebar-wrapper">
+            <div class="side-top">
+                <div class="logo-sidebar">
+                    Pc
+                </div>
+                <ul class="sidebar-nav">
+                    <li>@Html.ActionLink("Clientes", "Index", "Clientes")</li>
+                    <li>@Html.ActionLink("Computadoras", "Index", "Computadoras")</li>
+                    <li>@Html.ActionLink("Componentes", "Index", "Componentes")</li>
+                    <li>@Html.ActionLink("Facturas", "Index", "Facturas")</li>
+                </ul>
+            </div>
+        </div><!-- End Sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+
+
+
+
+            @model Proyecto_Final.Models.Cliente
+
+            @{
+                ViewBag.Title = "Delete";
+            }
+
+            <h2>Eliminar</h2>
+
+            <h3>Esta seguro de que lo quiere eliminar?</h3>
+            <div>
+                <h4>Cliente</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Nombre)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Apellidos)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Apellidos)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Telefono)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Telefono)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Direccion)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Direccion)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-danger" /> |
+                        @Html.ActionLink("Regresar a la lista", "Index")
+                    </div>
+                }
+            </div>
+        </div><!-- end wrapper -->
+
+        <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+        <!-- ALL JS FILES -->
+        <script src="~/js/all.js"></script>
+        <script src="~/js/responsive-tabs.js"></script>
+        <script src="~/js/custom.js"></script>
+
+        <!-- Menu Toggle Script -->
+        <script>
+            (function ($) {
+                "use strict";
+                $("#menu-toggle").click(function (e) {
+                    e.preventDefault();
+                    $("#wrapper").toggleClass("toggled");
+                });
+                smoothScroll.init({
+                    selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
+                    selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
+                    speed: 500, // Integer. How fast to complete the scroll in milliseconds
+                    easing: 'easeInOutCubic', // Easing pattern to use
+                    offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
+                    callback: function (anchor, toggle) { } // Function to run after scrolling
+                });
+            })(jQuery);
+        </script>
+    </div>
+</body>
